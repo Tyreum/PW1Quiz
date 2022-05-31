@@ -1,7 +1,29 @@
 .container{
     margin: 0 10% 0 10%;
+    background-image: url(imgs/background.jpg);
+    background-size: cover;
+    background-position: 0% 10%;
 }
 /* Just to further reference with font */
 .font{
     font-family: 'Roboto', sans-serif;
+}
+
+.QuestCard{
+    width: 400px;
+    height: 250px;
+    border-radius: 25px;
+    border: solid 3px gray;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.QuestTitle{
+    display: flex;
+}
+
+.QuestAlts{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
