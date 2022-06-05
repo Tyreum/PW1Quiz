@@ -11,23 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="imgs/icons/light-bulb.png">
+    <link rel="shortcut icon" href="../imgs/icons/light-bulb.png">
     <script type="text/javascript" src="../script.js"></script>
 </head>
 <body class="container">
     <div class="QuestCard" id="Card">
         <div class="QuestTitle">
-            <h1 id="Title">Super Quiz</h1>
-            <img src="imgs/icons/light-bulb.png" width="50px" height="50px">
+            <h3 id="Pergunta"></h3>
         </div>
-        <span id="description">Seja bem vindo ao Super Quiz! prove seu conhecimento em temas gerais.</span>
-        <div class="Name">
-            <div class="Nickname">
-                <span>Nickname</span>
-                <input id="nameInput" placeholder="SuperSaiaJeans">
-            </div>
+        <div class="QuestAlts">
+            <button onclick="setTimeout(hide, 5000)" id="alt1" value=""></button>
+            <button onclick="setTimeout(hide, 5000)" id="alt2" value=""></button>
+            <button onclick="setTimeout(hide, 5000)" id="alt3" value=""></button>
+            <button onclick="setTimeout(hide, 5000)" id="alt4" value=""></button>
         </div>
-        <div class="Start"><a href="Quests/index.html"><button id="Start">Start</button></a></div>
     </div>
 </body>
 </html>

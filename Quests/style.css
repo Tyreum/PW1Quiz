@@ -21,18 +21,11 @@
     border: solid 3px gray;
     background-color: whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    font-family: 'Roboto', sans-serif;
 }
 
 .QuestTitle{
-    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-#Title{
-    margin-right: 10px;
 }
 
 div.QuestAlts{
@@ -63,43 +56,4 @@ div{
 div.hide{
     opacity: 0;
     pointer-events: none;
-}
-
-
-/* Main Menu */
-
-.QuestCard span{
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-}
-
-.Name{
-    display: flex;
-    justify-content: center;
-}
-
-.Name .Nickname{
-    align-self: flex-start;
-}
-
-.Start{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.Start #Start{
-    width: 150px;
-    height: 25px;
-    border: none;
-    border-radius: 5px;
-}
-
-#nameInput{
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
 }
