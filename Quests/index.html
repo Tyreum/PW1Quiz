@@ -12,22 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../imgs/icons/light-bulb.png">
-    <script defer type="text/javascript" src="../script.js"></script>
 </head>
-<body class="container">
+<body onLoad="startGame()" class="container">
+    <script src="../script.js"></script>
     <div class="QuestCard" id="Card">
         <div class="QuestTitle">
             <h3 id="pergunta"></h3>
         </div>
-        <div class="QuestAlts">
-            <button onclick="setTimeout(hide, 5000)" id="alt1" value="" data-number="1"> A: </button>
-            <button onclick="setTimeout(hide, 5000)" id="alt2" value="" data-number="2" >B: </button>
-            <button onclick="setTimeout(hide, 5000)" id="alt3" value="" data-number="3" >C: </button>
-            <button onclick="setTimeout(hide, 5000)" id="alt4" value="" data-number="4" >D: </button>
+        <div id="QuestAlts" class="QuestAlts">
+            <button onclick="setTimeout(hide('alt1'), 5000)" id="alt1" value="" data-number="1"> A: </button>
+            <button onclick="setTimeout(hide('alt2'), 5000)" id="alt2" value="" data-number="2" >B: </button>
+            <button onclick="setTimeout(hide('alt3'), 5000)" id="alt3" value="" data-number="3" >C: </button>
+            <button onclick="setTimeout(hide('alt4'), 5000)" id="alt4" value="" data-number="4" >D: </button>
         </div>
         <div class="Score-box">
-            <h2> Pontuação </h2>
-            <h2 id="score"> 0 </h2>
+            <h2 id="position"></h2>
+            <h2 id="score"></h2>
         </div>
     </div>
 </body>

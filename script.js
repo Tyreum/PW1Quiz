@@ -78,7 +78,7 @@ const questions = [
     },
     // Question 8
     {
-        question: "",
+        question: "Qual o nome dos 3 mosqueteiros ?",
         alternatives: {
             alt1: 'a: Gaspar, Nicolau e Natanael',
             alt2: 'b: Belchior, Gaspar e Baltazar',
@@ -111,56 +111,50 @@ const questions = [
     },
 ]
 
+var position = 0;
+var score = 0;
 
-const question = document.getElementById('pergunta');
-const choices = document.getElementsByTagName('button');
-const scoreMark = document.querySelector('#score')
+function startGame() {
+    
+    let question = questions[position];
+    
+    document.getElementById("pergunta").innerText = question.question;
+    document.getElementById("alt1").innerText = question.alternatives.alt1;
+    document.getElementById("alt2").innerText = question.alternatives.alt2   
+    document.getElementById("alt3").innerText = question.alternatives.alt3
+    document.getElementById("alt4").innerText = question.alternatives.alt4
 
-console.log(question);
+    
+    document.getElementById("position").innerText = `${position + 1}/${questions.length}`
+    document.getElementById("score").innerText = `Sua Pontuação atua: ${score} pontos`
 
-console.log(choices);
+    position++; 
 
-let currentQuestion = {};
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestion = [];
+}
+var inicio = 0;
+function hide(value) {
 
-const score_points = 100;
-const max_questions = 10;
+    if(questions[position] === undefined || inicio === 1){
 
-startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    availableQuestion = [...questions]
-    console.log(availableQuestion)
-    getNewQuestion();
+        inicio++;
+
+        document.getElementById("QuestAlts").innerText ='';
+        document.getElementById("pergunta").innerText ='';
+
+        let container = document.getElementById("QuestAlts");
+        let tagA =  document.createElement("a");
+        tagA.innerText = "Volte para o inicio do game";
+        tagA.href = '../index.html';
+        
+        container.appendChild(tagA);
+        return;
+    }
+    
+    if(document.getElementById(value).innerText.substring(0,1) === questions[position].answer)
+        score++
+    
+    startGame()
 }
 
 
 
-getNewQuestion = () => {
-    
-    
-    /*if(availableQuestion.length === 0 || questionCounter > max_questions){
-        localStorage.setItem('mostRecentStore', score);
-
-        return window.location.assign('/end.html')
-
-    }*/
-
-    questionCounter++;
-
-    const questionIndex = Math.floor(Math.random() * availableQuestion.length)
-    currentQuestion = availableQuestion[questionIndex];
-    question.innerText = currentQuestion.question;
-
-    choices.forEach(choice => {
-        const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
-    }); 
-
-
-}
-
-startGame();

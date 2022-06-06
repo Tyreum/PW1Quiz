@@ -72,3 +72,30 @@ div.hide{
     opacity: 0;
     pointer-events: none;
 }
+
+a{
+    text-decoration: none;
+    width: 15em;
+    height: 5em;
+    background-color: beige;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2f2;
+    border: solid 2px black;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Roboto';
+    color: black;
+}
+
+
+a:hover{
+
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
