@@ -14,6 +14,10 @@
 }
 
 .QuestCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 500px;
     height: 350px;
     border-radius: 25px;
@@ -26,6 +30,11 @@
 .QuestTitle{
     display: flex;
     justify-content: center;
+    font-family: 'ROBOTO'
+}
+
+h3{
+    padding: 20px;
 }
 
 div.QuestAlts{
@@ -44,6 +53,12 @@ div.child{
     word-break: break-all;
     width: 200px;
     height: 60px;
+}
+
+.Score-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Transition */

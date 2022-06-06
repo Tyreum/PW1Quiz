@@ -12,18 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../imgs/icons/light-bulb.png">
-    <script type="text/javascript" src="../script.js"></script>
+    <script defer type="text/javascript" src="../script.js"></script>
 </head>
 <body class="container">
     <div class="QuestCard" id="Card">
         <div class="QuestTitle">
-            <h3 id="Pergunta"></h3>
+            <h3 id="pergunta"></h3>
         </div>
         <div class="QuestAlts">
-            <button onclick="setTimeout(hide, 5000)" id="alt1" value=""></button>
-            <button onclick="setTimeout(hide, 5000)" id="alt2" value=""></button>
-            <button onclick="setTimeout(hide, 5000)" id="alt3" value=""></button>
-            <button onclick="setTimeout(hide, 5000)" id="alt4" value=""></button>
+            <button onclick="setTimeout(hide, 5000)" id="alt1" value="" data-number="1"> A: </button>
+            <button onclick="setTimeout(hide, 5000)" id="alt2" value="" data-number="2" >B: </button>
+            <button onclick="setTimeout(hide, 5000)" id="alt3" value="" data-number="3" >C: </button>
+            <button onclick="setTimeout(hide, 5000)" id="alt4" value="" data-number="4" >D: </button>
+        </div>
+        <div class="Score-box">
+            <h2> Pontuação </h2>
+            <h2 id="score"> 0 </h2>
         </div>
     </div>
 </body>

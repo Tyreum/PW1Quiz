@@ -111,70 +111,56 @@ const questions = [
     },
 ]
 
-var quizContainer = document.getElementById('');
-var resultsContainer = document.getElementById('');
-var submitButton = document.getElementById('');
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+const question = document.getElementById('pergunta');
+const choices = document.getElementsByTagName('button');
+const scoreMark = document.querySelector('#score')
 
-function generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton){
-    function showQuestions(questions, quizContainer){
-        var output = [];
-        var answers;
+console.log(question);
 
-        for (let i = 0; i < questions.length; i++) {
-            answers = [];
+console.log(choices);
 
-            for (letter in questions[i].answers) {
-                answers.push(
-                    '<label>'
-                        + '<input type="radio" name="question'+i+'value="'+letter+'"'
-                        + letter + ': '
-                        + questions[i].answers[letter]
-                    + '</label>'
-                );
-            }
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                + '<div class="answers">' + answers.join('') + '</div>'
-            );
-        }
+let currentQuestion = {};
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestion = [];
 
-        quizContainer.innerHTML = output.join('');
-    }
+const score_points = 100;
+const max_questions = 10;
 
-    function showResults(questions, quizContainer, resultsContainer){
-        var answerContainers = quizContainer.querySelectorAll('.answers');
-
-        var userAnswer = '';
-        var numCorrect = 0;
-
-        for (var i = 0; i < questions.length; i++) {
-            userAnswer = (answerContainers[i].querySelector('input[name = question'+ i +']:checked')||{}).value;
-            
-            if(userAnswer === questions[i].correctAnswer){
-                numCorrect++;
-                answerContainers[i].style.color = 'lightgreen';
-            }
-            else{
-                answerContainers[i].style.color = 'red';
-            }
-        }
-
-        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
-    }
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestion = [...questions]
+    console.log(availableQuestion)
+    getNewQuestion();
 }
 
-// Transition
 
-function hide(){
-    var element = document.getElementById("Card");
-    element.classList.add("hide");
-    showQuestions(Questions, quizContainer)
-    setTimeout(show, 1500)
+
+getNewQuestion = () => {
+    
+    
+    /*if(availableQuestion.length === 0 || questionCounter > max_questions){
+        localStorage.setItem('mostRecentStore', score);
+
+        return window.location.assign('/end.html')
+
+    }*/
+
+    questionCounter++;
+
+    const questionIndex = Math.floor(Math.random() * availableQuestion.length)
+    currentQuestion = availableQuestion[questionIndex];
+    question.innerText = currentQuestion.question;
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    }); 
+
+
 }
 
-function show(){
-    var element = document.getElementById("Card");
-    element.classList.remove("hide");
-}
+startGame();
