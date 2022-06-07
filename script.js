@@ -38,7 +38,7 @@ const questions = [
         alternatives: {
             alt1: 'a: 108',
             alt2: 'b: 118',
-            alt3: 'a: 109',
+            alt3: 'c: 109',
             alt4: 'd: 113'
         },
         answer: "b",
@@ -120,13 +120,14 @@ function startGame() {
     
     document.getElementById("pergunta").innerText = question.question;
     document.getElementById("alt1").innerText = question.alternatives.alt1;
-    document.getElementById("alt2").innerText = question.alternatives.alt2   
-    document.getElementById("alt3").innerText = question.alternatives.alt3
-    document.getElementById("alt4").innerText = question.alternatives.alt4
+    document.getElementById("alt2").innerText = question.alternatives.alt2; 
+    document.getElementById("alt3").innerText = question.alternatives.alt3;
+    document.getElementById("alt4").innerText = question.alternatives.alt4;
 
     
-    document.getElementById("position").innerText = `${position + 1}/${questions.length}`
-    document.getElementById("score").innerText = `Sua Pontuação atua: ${score} pontos`
+    document.getElementById("position").innerText = `${position}/${questions.length}`
+    document.getElementById("score").innerText = `Sua Pontuação atual: ${score} pontos`
+
 
     position++; 
 
@@ -150,8 +151,14 @@ function hide(value) {
         return;
     }
     
-    if(document.getElementById(value).innerText.substring(0,1) === questions[position].answer)
+    console.log(document.getElementById(value).innerText[0]);
+    questions[position].answer
+    if(document.getElementById(value).innerText[0] === questions[position -1].answer){
         score++
+        console.log(questions[position -1].answer)
+        console.log(alt1)
+    }
+        
     
     startGame()
 }
